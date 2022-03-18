@@ -1,9 +1,11 @@
 name: Install Bit CLI
 description: Installs the Bit CLI to be used by any action
+inputs:
+  bit_token:
+    description: 'The bit auth token'
+    required: true
 runs:
   using: composite
-  env:
-    BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
   steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 16
