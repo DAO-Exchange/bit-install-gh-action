@@ -22,4 +22,4 @@ runs:
       run: |
         bit config set analytics_reporting false
         bit config set anonymous_reporting false
-        bit config set user.token $BIT_TOKEN
+        bit config set user.token ${{ inputs.bit_token }}
