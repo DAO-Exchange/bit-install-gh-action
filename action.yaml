@@ -14,12 +14,16 @@ runs:
         node-version: 16.x
     - name: Install Bit Version Manager
       run: npm i -g @teambit/bvm
+      shell: bash
     - name: Install latest Bit version
       run: bvm install
+      shell: bash
     - name: add bvm bin folder to path
       run: echo "$HOME/bin" >> $GITHUB_PATH
+      shell: bash
     - name: Set up bit config
       run: |
         bit config set analytics_reporting false
         bit config set anonymous_reporting false
         bit config set user.token ${{ inputs.bit_token }}
+      shell: bash
